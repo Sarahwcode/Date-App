@@ -1,13 +1,26 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+section {
+  margin: 0 auto;
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: solid 3px rgb(241, 208, 241);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
 h1 {
   text-align: center;
 }
+form {
+  padding: 20px 0px;
+}
 
 select {
-  width: 150px;
+  width: 380px;
   height: 50px;
   font-size: large;
   border-radius: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: plum;
   border-width: 5px;
   margin: 0px auto;
@@ -18,7 +31,14 @@ footer {
   font-size: 20px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  padding-top: 40px;
 }
 div {
   text-align: center;
+}
+.city {
+  display: flex;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  padding: 20px;
 }
