@@ -9,7 +9,7 @@ section {
   display: block;
   padding: 20px;
   width: 500px;
-  height: 600px;
+  height: 700px;
   border: solid 3px rgb(241, 208, 241);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
@@ -44,18 +44,14 @@ footer {
   margin: 10px 0;
   padding: 30px 0;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
 }
 .date {
   font-size: 15px;
 }
-.parisDate {
-  font-size: 15px;
-}
-.mexicoDate {
-  font-size: 15px;
-}
-.faroDate {
-  font-size: 15px;
+.time {
+  font-size: 25px;
 }
 
 .name {

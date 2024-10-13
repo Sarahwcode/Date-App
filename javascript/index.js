@@ -1,3 +1,37 @@
+function timeAndDateZone() {
+  let madridDateElement = document.querySelector("#madrid .date");
+  let madridTimeElement = document.querySelector("#madrid .time");
+  if (madridDateElement && madridTimeElement) {
+    let madridTime = moment().tz("Europe/Madrid");
+    madridDateElement.innerHTML = madridTime.format("dddd, MMMM Do, YYYY");
+
+    madridTimeElement.innerHTML = madridTime.format(
+      "H.mm.ss [<small>]A[</small>]"
+    );
+  }
+  let romeDateElement = document.querySelector("#rome .date");
+  let romeTimeElement = document.querySelector("#rome .time");
+  if (romeDateElement && romeTimeElement) {
+    let romeTime = moment().tz("Europe/Rome");
+    romeDateElement.innerHTML = romeTime.format("dddd, MMMM Do, YYYY");
+
+    romeTimeElement.innerHTML = romeTime.format("H.mm.ss [<small>]A[</small>]");
+  }
+  let istanbulDateElement = document.querySelector("#istanbul .date");
+  let istanbulTimeElement = document.querySelector("#istanbul .time");
+  if (istanbulDateElement && istanbulTimeElement) {
+    let istanbulTime = moment().tz("Europe/Istanbul");
+    istanbulDateElement.innerHTML = istanbulTime.format("dddd, MMMM Do, YYYY");
+
+    istanbulTimeElement.innerHTML = istanbulTime.format(
+      "H.mm.ss [<small>]A[</small>]"
+    );
+  }
+}
+
+timeAndDateZone();
+setInterval(timeAndDateZone, 1000);
+
 function changeCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
@@ -8,42 +42,20 @@ function changeCity(event) {
   let citiesElement = document.querySelector("#city");
   citiesElement.innerHTML = `
     <div class="city">
-    <h2>
-        <div>${cityName}</div>
-        <div class="date">${cityTime.format("dddd, MMMM Do, YYYY")}</div>
+   <div> 
+        <h2>${cityName}</h2>
+        <div class="date">${cityTime.format(
+          "dddd, MMMM Do, YYYY"
+        )}</div> </div> 
         <div class="time">${cityTime.format(
-          "H.mm.ss[<small>]A[</small>]"
-        )}</div>
-        </h2>
-      </div>
+          "H.mm.ss"
+        )} <small>${cityTime.format("A")}</small>
+        </div>
+</div>
+      
+      <a href="index.html">All cities</a>
   `;
 }
 
 let cityDate = document.querySelector("#cities");
 cityDate.addEventListener("change", changeCity);
-
-//function timeAndDateZone() {
-
-// let londonDateElement = document.querySelector(".date");
-// londonDateElement.innerHTML = moment()
-// .tz("Europe/London")
-//.format("dddd, MMMM Do, YYYY");
-//let londonTimeElement = document.querySelector(".time");
-//londonTimeElement.innerHTML = moment().format("H.mm.ss[<small>]A[</small>]");
-//let parisDateElement = document.querySelector(".parisDate");
-//parisDateElement.innerHTML = moment()
-//.tz("Europe/Paris")
-//.format("dddd, MMMM Do, YYYY");
-//let parisTimeElement = document.querySelector(".parisTime");
-//parisTimeElement.innerHTML = moment()
-//.tz("Europe/Paris")
-//.format("H.mm.ss[<small>]A[</small>]");
-//let mexicoDateElement = document.querySelector(".mexicoDate");
-//mexicoDateElement.innerHTML = moment()
-//.tz("America/Mexico_City")
-//.format("dddd, MMMM Do, YYYY");
-//let mexicoTimeElement = document.querySelector(".mexicoTime");
-//mexicoTimeElement.innerHTML = moment()
-//.tz("America/Mexico_City")
-//.format("H.mm.ss[<small>]A[</small>]");
-//}
